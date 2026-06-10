@@ -1,1 +1,4 @@
-console.log("hello world")
+console.log("Day 1 Git Learning");
+
+let name = "Kevin";
+console.log("Hello " + name);
