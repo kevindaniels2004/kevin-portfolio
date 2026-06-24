@@ -1,3 +1,4 @@
+
 import profile from "../assets/kevin.jpg";
 import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -6,21 +7,30 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center px-6"
+      className="
+        relative
+        min-h-screen
+        bg-black
+        overflow-hidden
+        pt-28
+        pb-12
+        px-4
+        sm:px-6
+      "
     >
       {/* Background Glow */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/20 blur-[150px] rounded-full" />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
         {/* IMAGE */}
         <motion.div
-          animate={{ y: [0, -20, 0] }}
+          animate={{ y: [0, -15, 0] }}
           transition={{
             duration: 4,
             repeat: Infinity,
           }}
-          className="flex justify-center"
+          className="order-1 flex justify-center"
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-indigo-500 blur-3xl opacity-40" />
@@ -30,8 +40,10 @@ function Hero() {
               alt="Kevin"
               className="
                 relative
-                w-72
-                h-72
+                w-48
+                h-48
+                sm:w-60
+                sm:h-60
                 md:w-[420px]
                 md:h-[420px]
                 object-cover
@@ -46,80 +58,88 @@ function Hero() {
 
         {/* CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
           className="
+            order-2
+            w-full
             backdrop-blur-md
             bg-white/5
             border
             border-white/10
             rounded-3xl
-            p-8
+            p-6
+            md:p-8
           "
         >
-          <p className="text-teal-400 uppercase tracking-widest mb-3">
+          <p className="text-teal-400 uppercase tracking-[4px] text-sm mb-3">
             Welcome To My Portfolio
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-black mb-4">
-            Hi, I'm{" "}
-            <span className="text-indigo-500">
+          <h1 className="font-black leading-none mb-4">
+            <span className="block text-4xl sm:text-5xl md:text-7xl text-white">
+              Hi, I'm
+            </span>
+
+            <span className="block text-4xl sm:text-5xl md:text-7xl bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">
               Kevin
             </span>
           </h1>
 
-          <h2 className="text-2xl md:text-4xl font-bold text-teal-400 mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-teal-400 mb-5">
             Web Developer • Fitness Coach • Creator
           </h2>
 
-          <p className="text-zinc-300 leading-8 text-lg">
-            Built on discipline and consistency, I bring the same
-            passion to fitness and freelancing. I help brands and
-            businesses build modern digital experiences while inspiring
-            people through fitness and content creation.
+          <p className="text-zinc-300 text-base md:text-lg leading-8">
+            Built on discipline and consistency, I bring the same passion
+            to fitness and freelancing. I help brands and businesses build
+            modern digital experiences while inspiring people through
+            fitness and content creation.
           </p>
 
           {/* SOCIAL */}
-          <div className="flex gap-5 my-8 text-3xl">
+          <div className="flex gap-6 my-8 text-3xl">
             <a
               href="https://www.linkedin.com/in/kevinnn7x"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-indigo-500 hover:scale-125 transition"
+              className="hover:text-indigo-500 transition"
             >
               <FaLinkedin />
             </a>
 
             <a
-              href=""
+              href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-pink-500 hover:scale-125 transition"
+              className="hover:text-pink-500 transition"
             >
               <FaInstagram />
             </a>
 
             <a
-              href="https://github.com/kevindaniels2004/"
+              href="https://github.com/kevindaniels2004"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-teal-400 hover:scale-125 transition"
+              className="hover:text-teal-400 transition"
             >
               <FaGithub />
             </a>
           </div>
 
           {/* BUTTONS */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               className="
-                px-8 py-4
+                flex-1
+                px-8
+                py-4
                 rounded-full
                 bg-indigo-500
                 hover:bg-indigo-600
-                font-semibold
                 transition
+                font-semibold
               "
             >
               Hire Me
@@ -127,20 +147,23 @@ function Hero() {
 
             <button
               className="
-                px-8 py-4
+                flex-1
+                px-8
+                py-4
                 rounded-full
                 border
                 border-teal-400
                 hover:bg-teal-400
                 hover:text-black
-                font-semibold
                 transition
+                font-semibold
               "
             >
               Download CV
             </button>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
